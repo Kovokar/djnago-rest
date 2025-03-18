@@ -1,5 +1,5 @@
-from django.db import models, CheckConstraint, Q
-
+# from django.db import models, CheckConstraint, Q
+from django.db import models
 
 # Create your models here.
 class Base(models.Model):
@@ -34,7 +34,11 @@ class Avaliacao(Base):
         verbose_name = "Avaliação"
         verbose_name_plural = "Avaliações"
         unique_together = ["email", "curso"]
-        constraints = [CheckConstraint(check=Q(avaliacao__gt=0), name='avaliacao_valida')]
+    
+    
+        # constraints = [CheckConstraint(check=Q(avaliacao__gt=0), name='avaliacao_valida')]
+    
+
     
     def __str__(self):
         return f'{self.nome} avaliou o curso {self.curso} com nota = {self.avaliacao}'
