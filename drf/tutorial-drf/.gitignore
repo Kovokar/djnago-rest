@@ -2,6 +2,8 @@
 venv/
 .env/
 *.env
+env/
+*.fish
 
 # Arquivos de banco de dados
 db.sqlite3
