@@ -1,0 +1,48 @@
+# Diretórios de dependências
+venv/
+.env/
+*.env
+env/
+*.fish
+
+# Arquivos de banco de dados
+db.sqlite3
+*.sqlite3
+
+# Arquivos de logs
+*.log
+
+# Arquivos de compilação do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Arquivos de configuração do IDE
+.vscode/
+.idea/
+*.iml
+
+# Arquivos de migração do Django
+migrations/
+
+# Arquivos de cache
+*.pot
+*.mo
+*.pyc
+
+# Arquivos de segurança
+*.pem
+*.key
+
+# Diretórios específicos do sistema operacional (ex.: MacOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Arquivos de backup
+*.bak
+*.swp
+
+# Configurações do Django
+*.log
