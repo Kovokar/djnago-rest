@@ -16,6 +16,7 @@ class Curso(Base):
     url = models.URLField(unique=True)
 
     class Meta:
+        db_table = 'curso'
         verbose_name = "Curso"
         verbose_name_plural = "Cursos"
 
@@ -29,16 +30,12 @@ class Avaliacao(Base):
     email = models.EmailField()
     comentario  = models.TextField(blank=True, default="")
     avaliacao = models.DecimalField(max_digits=2, decimal_places=1)
-
+    teste = models.CharField(max_length=255)
     class Meta:
+        db_table = 'avaliacao'
         verbose_name = "Avaliação"
         verbose_name_plural = "Avaliações"
         unique_together = ["email", "curso"]
-    
-    
-        # constraints = [CheckConstraint(check=Q(avaliacao__gt=0), name='avaliacao_valida')]
-    
 
-    
     def __str__(self):
         return f'{self.nome} avaliou o curso {self.curso} com nota = {self.avaliacao}'
