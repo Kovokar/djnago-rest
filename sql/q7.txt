@@ -1,0 +1,3 @@
+-- 7. Categoria cujo nome tenha comprimento superior a 15 caracteres.
+select nome from categoria c 
+	where length(nome) > 5

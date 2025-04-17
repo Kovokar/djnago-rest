@@ -1,0 +1,20 @@
+-- 8. Número dos apartamentos ocupados no ano de 2017 com o respectivo nome da sua categoria. 
+
+-- modo 1
+select 
+	num_ap, cod_cat,
+	(select nome from categoria c where c.cod_cat = a.cod_cat) as nome	
+	from apartamento a 
+		where cod_cat in (
+			select cod_cat from hospedagem h 
+				where (dt_saida > '2017-01-01' or dt_ent > '2017-01-01') 
+		)
+	
+
+-- modo 2
+select distinct a.num_ap, c.nome from apartamento a 
+inner join hospedagem h on a.num_ap = h.num_ap 
+inner join categoria c on a.cod_cat = c.cod_cat 
+	where (dt_saida > '2017-01-01' or dt_ent > '2017-01-01') 
+	order by num_ap 
+	
