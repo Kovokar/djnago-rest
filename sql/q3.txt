@@ -1,0 +1,13 @@
+-- 3. Listagem contendo os valores de diárias e os números dos apartamentos,
+--  ordenada em ordem decrescente de valor. 
+
+select c.nome, a.num_ap 
+from categoria c 
+	inner join apartamento a 
+		on c.cod_cat = a.cod_cat 
+order by a.num_ap
+
+select -- modo 2
+	(select nome from categoria c where c.cod_cat = a.cod_cat) as categoria,
+	cod_cat as codigo
+from apartamento a

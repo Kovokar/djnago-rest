@@ -1,0 +1,31 @@
+-- 4. Categorias que possuem apenas um apartamento.
+
+-- modo pedro
+select nome from categoria c where cod_cat in (
+	SELECT cod_cat -- modo 1
+		FROM apartamento a 
+		GROUP BY cod_cat
+			HAVING COUNT(num_ap) = 3
+	ORDER BY cod_cat
+);
+
+	
+
+-- Modo Xamã
+SELECT nome FROM (
+	SELECT COUNT(a) quantidade, c.nome nome FROM categoria c 
+	JOIN apartamento a ON a.cod_cat = c.cod_cat
+	GROUP BY c.cod_cat
+) counts WHERE counts.quantidade = 3;
+
+
+
+-- Jeito sem usar SELECT na clausula FROM (usando HAVING)
+SELECT nome FROM categoria c 
+JOIN apartamento a ON a.cod_cat = c.cod_cat
+GROUP BY c.cod_cat
+HAVING COUNT(a) = 3;
+-- O COUNT apareceu sem ter que ter um novo SELECT
+
+
+

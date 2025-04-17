@@ -1,0 +1,11 @@
+-- 5. Listagem dos nomes dos hóspedes brasileiros com mês e ano de nascimento, 
+-- por ordem decrescente de idade e por ordem crescente de nome do hóspede.  
+select nome, to_char(dt_nasc, 'MM/YYYY') as data, idade
+from hospede h 
+order by idade desc, nome;
+
+SELECT 
+  nome, 
+  EXTRACT(MONTH FROM dt_nasc) AS mes_nasc,
+  EXTRACT(YEAR FROM dt_nasc) AS ano_nasc
+FROM hospede;
