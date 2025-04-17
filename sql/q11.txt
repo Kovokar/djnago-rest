@@ -1,0 +1,17 @@
+
+-- 11. Mostre o nome e o salário de cada funcionário.  Extraordinariamente, cada funcionário 
+-- receberá um acréscimo neste salário de 10 reais para cada hospedagem realizada. 
+
+-- modo 1
+select nome, salario +
+		((select count(*)
+		from hospedagem hm
+		where hm.cod_func = f.cod_func) * 10) as salario
+from funcionario f 
+order by f.nome 
+
+-- modo 2
+select f.nome, (f.salario + count(f.cod_func) * 10) as salario from funcionario f 
+inner join hospedagem hm on f.cod_func = hm.cod_func 
+group by f.cod_func 
+order by f.nome 
