@@ -1,0 +1,23 @@
+-- 6. Listagem com 3 colunas, nome do hóspede, 
+-- número do apartamento e quantidade (número de vezes que aquele 
+--hóspede se hospedou naquele apartamento), 
+-- em ordem decrescente de quantidade. 
+
+-- modo 1
+select h.nome, hm.num_ap, count(hm.num_ap) as qtd_hospedagem 
+	from hospedagem hm
+	inner join hospede h on h.cod_hosp = hm.cod_hosp 
+	group by h.nome, hm.num_ap 
+	order by qtd_hospedagem desc 
+
+-- modo 2	
+select 
+	(select nome from hospede h where h.cod_hosp = hm.cod_hosp) as name,
+	hm.num_ap,
+	(	
+		select count(*) from hospedagem h2
+		where h2.cod_hosp = hm.cod_hosp
+		and h2.num_ap = hm.num_ap
+	) as qtd
+	from (select distinct cod_hosp, num_ap from hospedagem h) hm  
+	order by qtd desc
