@@ -1,0 +1,8 @@
+-- 12. Listagem das categorias cadastradas e para aquelas que possuem apartamentos,
+--relacionar também o número do apartamento, ordenada pelo nome da categoria e pelo número do apartamento. 
+
+
+SELECT nome, num_ap 
+FROM categoria c
+INNER JOIN apartamento a ON c.cod_cat = a.cod_cat
+ORDER BY nome, num_ap;
