@@ -1,8 +1,6 @@
-		
 -- 16. Sem usar subquery, o nome dos hóspedes que nasceram na mesma data do hóspede de código 2. 
-		
-select * from hospede h 
-inner join hospede h2
-	on h.cod_hosp = h2.cod_hosp 
-
-update hospede 
+SELECT *
+FROM hospede h1, hospede h2
+WHERE h1.dt_nasc = h2.dt_nasc
+  AND h2.cod_hosp = 2
+  AND h1.cod_hosp != 2;
