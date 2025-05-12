@@ -1,0 +1,11 @@
+-- 14. O nome dos funcionário que atenderam o João (hospedando ou reservando) 
+-- ou que hospedaram ou reservaram apartamentos da categoria luxo. 
+	select * 
+	from funcionario f 
+	inner join hospedagem hm 
+		on f.cod_func = hm.cod_func 
+	inner join hospede h
+		on h.cod_hosp = hm.cod_hosp 
+	inner join reserva r
+		on h.cod_hosp = r.cod_hosp 
+	where h.nome ilike '%JOAO%'
