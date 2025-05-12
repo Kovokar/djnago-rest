@@ -1,0 +1,12 @@
+-- 17. O nome do hóspede mais velho que se hospedou na categoria mais cara mo ano de 2016. 
+	select h.nome from hospedagem h2
+	inner join hospede h 
+		on h.cod_hosp = h2.cod_hosp 
+	where h2.num_ap in
+		(select num_ap from apartamento a 
+		where cod_cat = 
+			(select cod_cat from categoria c 
+			where preco = 
+				(select max(preco) from categoria c2)))
+		and (dt_ent > '2016-01-01' and dt_ent > '2016-12-31' )
+	order by h.dt_nasc limit 1
