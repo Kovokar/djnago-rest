@@ -1,0 +1,8 @@
+		
+-- 16. Sem usar subquery, o nome dos hóspedes que nasceram na mesma data do hóspede de código 2. 
+		
+select * from hospede h 
+inner join hospede h2
+	on h.cod_hosp = h2.cod_hosp 
+
+update hospede 
