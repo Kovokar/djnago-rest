@@ -1,0 +1,11 @@
+-- 15. O código das hospedagens realizadas pelo hóspede mais velho que se hospedou no apartamento mais caro. 
+	select cod_hospedagem from hospedagem hm
+		inner join hospede h on
+		h.cod_hosp = hm.cod_hosp 
+	where num_ap in 
+		(select num_ap from apartamento a 
+		where cod_cat = 
+			(select cod_cat from categoria
+			where preco = 
+				(select MAX(preco) from categoria)))
+		order by h.dt_nasc limit 1
