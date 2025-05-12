@@ -1,0 +1,16 @@
+-- 18. O nome das categorias que foram reservadas pela Maria ou que foram ocupadas pelo João quando ele foi atendido pelo Joaquim. 
+	SELECT * 
+	FROM reserva r
+	JOIN hospedagem hm ON r.cod_hosp = hm.cod_hosp
+	where r.cod_hosp =
+		(select cod_hosp from hospede h
+		where nome ilike '%maria%') 
+		or
+		hm.cod_hospedagem =
+		(select cod_hosp from hospede h
+		where nome ilike '%joao%') 
+	and 
+		hm.cod_func = (
+			select cod_func from funcionario f
+			where nome ilike '%joaquim%')
+	
