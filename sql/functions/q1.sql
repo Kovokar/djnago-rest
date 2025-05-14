@@ -54,7 +54,6 @@
     END;
     $$ LANGUAGE plpgsql;
 
-
 -- gepeto
     CREATE OR REPLACE FUNCTION aplicar_desconto_ou_criar_contrato(
         p_cliente_id INT,
@@ -125,6 +124,5 @@
         END IF;
     END;
     $$ LANGUAGE plpgsql;
-
 
 
