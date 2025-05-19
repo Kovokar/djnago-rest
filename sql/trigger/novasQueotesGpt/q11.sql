@@ -1,0 +1,2 @@
+-- Q11: Trigger para validar valor total do pedido
+-- Escreva sua consulta SQL aqui

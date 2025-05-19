@@ -1,0 +1,2 @@
+-- Q8: Títulos mais comprados em quantidade total
+-- Escreva sua consulta SQL aqui

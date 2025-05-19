@@ -1,0 +1,2 @@
+-- Q14: Função para total de livros fornecidos no último trimestre
+-- Escreva sua consulta SQL aqui

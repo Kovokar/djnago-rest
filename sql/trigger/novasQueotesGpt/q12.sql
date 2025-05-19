@@ -1,0 +1,2 @@
+-- Q12: Trigger para atualizar estoque ao registrar item
+-- Escreva sua consulta SQL aqui

@@ -1,0 +1,2 @@
+-- Q13: Trigger para impedir exclusão de livro com pedidos
+-- Escreva sua consulta SQL aqui

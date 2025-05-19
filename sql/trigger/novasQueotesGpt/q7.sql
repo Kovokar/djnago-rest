@@ -1,0 +1,2 @@
+-- Q7: Fornecedores com valor médio por item pedido superior a R$ 100,00
+-- Escreva sua consulta SQL aqui

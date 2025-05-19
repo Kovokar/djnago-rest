@@ -1,0 +1,2 @@
+-- Q2: Livros com valor acima da média
+-- Escreva sua consulta SQL aqui

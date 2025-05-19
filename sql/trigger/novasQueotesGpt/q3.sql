@@ -1,0 +1,2 @@
+-- Q3: Pedidos por fornecedor
+-- Escreva sua consulta SQL aqui

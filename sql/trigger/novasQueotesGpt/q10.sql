@@ -1,0 +1,2 @@
+-- Q10: Reduzir preço de livros com grande estoque
+-- Escreva sua consulta SQL aqui

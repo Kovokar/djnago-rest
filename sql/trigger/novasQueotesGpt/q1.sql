@@ -1,0 +1,2 @@
+-- Q1: Títulos com menos de 5 unidades em estoque
+-- Escreva sua consulta SQL aqui

@@ -1,0 +1,2 @@
+-- Q9: Atualizar estoque com base nos pedidos
+-- Escreva sua consulta SQL aqui

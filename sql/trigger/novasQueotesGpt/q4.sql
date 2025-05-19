@@ -1,0 +1,2 @@
+-- Q4: Total de livros e gasto por fornecedor em março de 2024
+-- Escreva sua consulta SQL aqui

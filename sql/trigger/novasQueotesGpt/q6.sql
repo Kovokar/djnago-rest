@@ -1,0 +1,2 @@
+-- Q6: Fornecedor que vendeu mais livros em quantidade em fevereiro de 2024
+-- Escreva sua consulta SQL aqui
