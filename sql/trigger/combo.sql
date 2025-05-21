@@ -8,7 +8,7 @@ returns trigger as $$
 begin
 	if new.qtd_em_estoque < old.qtd_em_estoque then
 		update combo
-		set qtd_prod_no_combo = qtd_prod_no_combo - 1
+		set qtd_prod_no_combo = qtd_prod_no_combo - (old.qtd_em_estoque- new.qtd_em_estoque)
 		where cod_prod_do_combo = new.cod_prod;
 	end if;
 	return new;
